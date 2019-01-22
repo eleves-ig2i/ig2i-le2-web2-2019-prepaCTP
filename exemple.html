@@ -1,0 +1,110 @@
+<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui/jquery-ui.js"></script>
+<script>
+
+    /*
+     declarer variables globales, représentant les éléments importants du DOM ici.
+     ex : var tmpl_login
+    */
+
+
+    $(document).ready(function(){
+        /*
+         initialiser les variables globales à l'aide d'un sélecteur CSS.
+        */
+
+        // traitement à l'ouverture de la page.
+        /*
+            exemple d'utilisation de closure.
+        */
+        var f1 = mkClosure({"nom" : "Salez", "prenom" : "Nathan", "id" : 20 });
+        f1("1er argument");
+
+
+
+
+        /*
+        modèle de requete ajax pour le jquery
+         */
+        $.getJSON(
+            "data.php",
+            {"action" : "se connecter"},
+            function(oRep)
+            {
+                console.log(oRep);
+            }
+        );
+
+    });
+
+    function mkClosure(args){
+        return function(arg1,arg2){
+            console.log(args);
+            console.log(arg1,arg2);
+        }
+    }
+
+
+</script>
+
+
+<style>
+    /*
+     code CSS.
+     exemple de style pour une bannière.
+    */
+    #banniere{
+        border:1px solid black;
+        height:50px;
+        line-height:50px;
+        position:absolute;
+        top:0px; left:0px;right:0px;
+        background-color:lightgrey;
+        padding:3px;
+        text-align:center;
+        vertical-align: middle;
+    }
+
+    body
+    {
+        margin-top : 60px;
+    }
+
+    .bloc
+    {
+        border : 1px solid black;
+        width : 200px;
+        height : 200px;
+        text-align: center;
+        margin: 10px;
+        float:left;
+        position:relative;
+    }
+
+    img
+    {
+        margin-right : 3px;
+        float:right;
+        width:50px;
+        height:50px;
+    }
+
+</style>
+
+<body>
+    <!-- Insérer les éléments importants à manipuler et/ou les modèles -->
+    <div id="banniere">
+        <span>Road to the LE3</span>
+        <img src="francois.jpg" alt="bruno" />
+        <img src="francois.jpg" alt="bruno" />
+    </div>
+    <!-- code HTML pour les accents -->
+    <!-- &eacute; == "é" _&egrave; == "è" -->
+
+    <div class="bloc">1 bloc</div>
+    <div class="bloc">2 blocs</div>
+    <div class="bloc">3 blocs</div>
+</body>
+
